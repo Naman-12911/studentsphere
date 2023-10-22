@@ -10,7 +10,7 @@ export default function Home() {
 					<div className="home-main-news-main">
 						<div className="home-main-news-main-main">
 							<div className="home-main-news-main-main-image">
-								<img src="" alt="" />
+								<img src="https://images.pexels.com/photos/3951353/pexels-photo-3951353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
 							</div>
 							<div className="home-main-news-main-main-info">
 								<h2>TITLE</h2>
@@ -26,7 +26,7 @@ export default function Home() {
 					<div className="home-main-news-main">
 						<div className="home-main-news-main-main">
 							<div className="home-main-news-main-main-image">
-								<img src="" alt="" />
+								<img src="https://images.pexels.com/photos/2263436/pexels-photo-2263436.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
 							</div>
 							<div className="home-main-news-main-main-info">
 								<h2>TITLE</h2>
@@ -42,7 +42,7 @@ export default function Home() {
 					<div className="home-main-news-main">
 						<div className="home-main-news-main-main">
 							<div className="home-main-news-main-main-image">
-								<img src="" alt="" />
+								<img src="https://images.pexels.com/photos/4065876/pexels-photo-4065876.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
 							</div>
 							<div className="home-main-news-main-main-info">
 								<h2>TITLE</h2>
