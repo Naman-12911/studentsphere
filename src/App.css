@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+*,::before,::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  overflow-x: hidden;
+  font-size: 62.5%;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+.container {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+:root{
+  --main-font:'Oswald', sans-serif;
+  --main-font-text:'Poppins', sans-serif;
+  --brown:#ca4316;
+  --brown-hover:#ac3812;
+  --green:#B5C99A;
+  --green-hover:#a5be85;
+  --offwhite:#FFF9C9;
+  --yellow:#FFC95F;
+  --main-shadow:rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  --main-dark-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.display_none{
+  display: none;
+}
+
+@media (max-width: 1536px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    max-width: 475px;
+  }
+}
+
+@media (max-width: 475px) {
+  .container {
+    width: 100%;
+  }
+}

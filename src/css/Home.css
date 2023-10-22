@@ -1,0 +1,137 @@
+.home{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* background-color: aquamarine; */
+}
+.home-main{
+	width: clamp(40rem,90vw,170rem);
+	/* min-height:100vh; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 20px;
+	margin-top: 10vh;
+	/* background-color: beige; */
+}
+.home-main-news{
+	width: 100%;
+	min-height: 80vh;
+	/* background-color: blueviolet; */
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-evenly;
+	flex-direction: column;
+	padding: 10px 0px;
+}
+.home-main-news h1{
+	font-size: 10rem;
+	font-family: var(--main-font);
+	margin-left: 10px;
+}
+
+.home-main-news-main{
+	width: 100%;
+	height: 80%;
+	/* background-color: burlywood; */
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	gap: 10px;
+	row-gap: 10px;
+	flex-wrap: wrap;
+}
+.home-main-news-main-main{
+	height: 60rem;
+	width: 40rem;
+	/* background-color: aqua; */
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	padding: 5px;
+	box-shadow: var(--main-dark-shadow);
+	border-radius: 5px;
+}
+.home-main-news-main-main-image{
+	height: 45%;
+	width: 100%;
+	/* background-color: aliceblue; */
+	border-radius: 5px;
+}
+.home-main-news-main-main-image img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 5px;
+}
+.home-main-news-main-main-info{
+	height: 45%;
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+}
+.home-main-news-main-main h2{
+	font-size: 3rem;
+	font-family: var(--main-font);
+}
+.home-main-news-main-main p{
+	font-size: 2rem;
+	font-family: var(--main-font-text);
+}
+.home-main-news-main-main button{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	font-size: 2rem;
+	border: none;
+	background-color: var(--green);
+	width: 40%;
+	font-family: var(--main-font);
+	cursor: pointer;
+	transition: 400ms;
+}
+.home-main-news-main-main button img{
+	width: 2rem;
+}
+.home-main-news-main-main button:hover{
+	box-shadow: var(--main-shadow);
+	background-color: var(--green-hover);
+}
+.home-main-news > button{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	font-size: 2rem;
+	border: none;
+	background-color: var(--brown);
+	font-family: var(--main-font);
+	cursor: pointer;
+	padding: 10px 40px;
+	transition: 400ms;
+}
+.home-main-news > button:hover{
+	box-shadow: var(--main-shadow);
+	background-color: var(--brown-hover);
+}
+@media (max-width: 1536px) {
+}
+@media (max-width: 1280px) {
+}
+@media (max-width: 1024px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 640px) {
+	.home-main-news-main-main{
+		height: 50rem;
+		width: 35rem;
+	}
+}
+@media (max-width: 475px) {
+}

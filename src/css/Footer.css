@@ -1,0 +1,16 @@
+.footer{
+	height: 40vh;
+	width: 100vw;
+	background-color: var(--offwhite);
+}
+.footer-main{
+	height: 100%;
+	background-color: var(--offwhite);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.footer-main h1{
+	font-size: 12rem;
+	font-family: var(--main-font);
+}
