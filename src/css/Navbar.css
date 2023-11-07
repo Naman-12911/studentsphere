@@ -2,9 +2,11 @@
 	width: 100vw;
 	height: 8vh;
 	left: 0;
+	top: 0;
 	background-color:var(--offwhite);
 	position: fixed;
 	box-shadow: var(--main-shadow);
+	z-index: 999;
 }
 .navbar-main{
 	height: 100%;

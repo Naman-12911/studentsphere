@@ -1,0 +1,106 @@
+.search{
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.search-main{
+	width: clamp(40rem,80vw,170rem);
+	min-height: 80vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: column;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: var(--main-dark-shadow);
+}
+.search-main-top{
+	width: 100%;
+	height: 20rem;
+	/* background-color: aquamarine; */
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: column;
+}
+.search-main-top h1{
+	font-size: 8rem;
+	text-align: center;
+	font-family: var(--main-font);
+}
+.search-main-top-search{
+	width: 70%;
+	height: 5rem;
+	/* background-color: blueviolet; */
+	border: 1px solid grey;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+.search-main-top-search input{
+	height: 100%;
+	width: 90%;
+	border: none;
+	outline: none;
+	text-indent: 3px;
+	font-family: var(--main-font-text);
+	font-size: 2rem;
+}
+.search-main-top-search span{
+	height: 100%;
+	width: 1px;
+	background-color: grey;
+}
+.search-main-top-search img{
+	width: 3rem;
+}
+.search-main-bottom{
+	min-height:20vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	gap: 10px;
+	row-gap:10px ;
+}
+.search-main-bottom-main{
+	height: 35rem;
+	width: 30rem;
+	border: 1px solid grey;
+	padding: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: 400ms;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+	/* background-color: blueviolet; */
+}
+.search-main-bottom-main:hover{
+	box-shadow: var(--main-shadow);
+}
+.search-main-bottom-main-image{
+	width: 100%;
+	height: 60%;
+	overflow: hidden;
+	border-radius: 5px;
+}
+.search-main-bottom-main-image img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: 400ms;
+	border-radius: 5px;
+}
+.search-main-bottom-main h1{
+	font-size: 2rem;
+	text-align: center;
+	font-family: var(--main-font-text);
+}
+.search-main-bottom-main:hover .search-main-bottom-main-image img{
+	transform: scale(1.1);
+}

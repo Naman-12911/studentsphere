@@ -1,26 +1,82 @@
 import '../css/UserProfile.css'
 import plus from '../assets/plus.svg'
 import update from '../assets/update.svg'
+import logout from '../assets/logout.svg'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect, useState } from 'react'
+import { userLogout } from '../app/User'
+import { useNavigate } from 'react-router-dom'
+import Spinner from './Spinner'
+import axios from 'axios'
 
 export default function UserProfile() {
+	const dispatch=useDispatch()
+	const navigate=useNavigate()
+	const user=useSelector((state)=>state.user.user)
+
+	const [name,setName]=useState('');
+	const [email,setEmail]=useState('');
+	const [phone_no,setPhone]=useState('');
+	const [grade,setGrade]=useState('');
+	const [college_id,setCollegeId]=useState('');
+	const [facebook_profile,setFacebbok]=useState('');
+	const [linkedin_profile,setLinkedIn]=useState('');
+	const [personal_website,setPersonalWebsite]=useState('');
+	const [profile_picture,setProfilePicture]=useState('');
+	const [loading,setLoading]=useState(false);
+
+	useEffect(()=>{
+		setLoading(true)
+		axios
+			.get("https://studentsphere-b734aba5fe3c.herokuapp.com/account/profile/",{
+				headers:{
+					"Authorization" : `Bearer ${user}`
+				}
+			})
+			.then((response)=>{
+				console.log(response.data)
+
+				setName(response.data.name)
+				setEmail(response.data.email)
+				setPhone(response.data.phone_no)
+				setGrade(response.data.grade)
+				setCollegeId(response.data.college_id)
+				setFacebbok(response.data.facebook_profile)
+				setLinkedIn(response.data.linkedin_profile)
+				setPersonalWebsite(response.data.personal_website)
+				setProfilePicture(response.data.profile_picture)
+
+				setLoading(false)
+			})
+			.catch((error)=>{
+				console.log(error.response.data)
+				setLoading(false)
+			})
+	},[user])
+
+	const handleLogout=()=>{
+		setLoading(true)
+		dispatch(userLogout());
+		navigate('/')
+	}
   return (
 	<div>
 		<div className="userprofile container">
-			<div className="userprofile-main">
+			{loading ? <Spinner/> : <div className="userprofile-main">
 				<div className="userprofile-main-top" style={{backgroundPosition: "center",backgroundRepeat: "no-repeat",backgroundSize: "cover",background: "rgb(0,0,0)",backgroundImage: "linear-gradient(0deg, rgba(0,0,0,0.4520308123249299) 0%, rgba(255,255,255,0) 100%),url(https://images.pexels.com/photos/2693212/pexels-photo-2693212.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)"}}>
 					<div className="userprofile-main-top-main">
 						<div className="userprofile-main-top-main-left">
 							<div className="userprofile-main-top-main-left-image">
-								<img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="" />
+								<img src={profile_picture} alt="" />
 							</div>
 							<div className="userprofile-main-top-main-left-info">
 								<h1>Jack Tyson</h1>
 								<div className="userprofile-main-top-main-left-info-socials">
 									<div className="socials">
-										<img src="https://www.facebook.com/images/fb_icon_325x325.png" alt="" />
+										<a href={facebook_profile} target='_blank' rel="noreferrer"><img src="https://www.facebook.com/images/fb_icon_325x325.png" alt="" /></a>
 									</div>
 									<div className="socials">
-										<img src="https://play-lh.googleusercontent.com/A-Rnrh0J7iKmABskTonqFAANRLGTGUg_nuE4PEMYwJavL3nPt5uWsU2WO_DSgV_mOOM" alt="" />
+										<a href={linkedin_profile} target='_blank' rel="noreferrer"><img src="https://pbs.twimg.com/profile_images/1661161645857710081/6WtDIesg_400x400.png" alt="" /></a>
 									</div>
 								</div>
 							</div>
@@ -34,7 +90,7 @@ export default function UserProfile() {
 					<div className="userprofile-main-bottom-left">
 						<div className="userprofile-main-bottom-left-newpost">
 							<button><img src={plus} alt="" />NEW POST</button>
-							<button><img src={update} alt="" />UPDATE PROFILE</button>
+							{/* <button><img src={update} alt="" />UPDATE PROFILE</button> */}
 						</div>
 						<div className="userprofile-main-bottom-left-main">
 							<div className="userprofile-main-bottom-left-main-info">
@@ -55,18 +111,25 @@ export default function UserProfile() {
 						</div>
 					</div>
 					<div className="userprofile-main-bottom-right">
-						<h1>USER&#39;s DETAILS</h1>
-						<span></span>
-						<p><b>NAME : </b>Jack Tyson</p>
-						<p><b>AGE : </b></p>
-						<p><b>DOB : </b></p>
-						<p><b>COLLEGE ID : </b></p>
-						<p><b>PHONE NO : </b></p>
-						<p><b>EMAIL : </b></p>
-						<p><b>STUDENT ID : </b></p>
+						<div className="userprofile-main-bottom-right-info">
+							<h1>USER&#39;s DETAILS</h1>
+							<span></span>
+							<p><b>NAME : </b>{name}</p>
+							<p><b>EMAIL : </b>{email}</p>
+							<p><b>PHONE NO : </b>{phone_no}</p>
+							<p><b>COLLEGE ID : </b>{college_id}</p>
+							<p><b>GRADE : </b>{grade}</p>
+							<p><b>PERSONAL WEBISTE : </b>{personal_website}</p>
+						</div>
+						<div className="userprofile-main-bottom-right-button">
+							<button onClick={()=>navigate('/updateprofile')}><img src={update} alt="" />UPDATE PROFILE</button>
+							<button onClick={handleLogout}><img src={logout} alt="" />LOGOUT</button>
+						</div>
+						
 					</div>
 				</div>
-			</div>
+			</div>}
+			
 		</div>
 	</div>
   )

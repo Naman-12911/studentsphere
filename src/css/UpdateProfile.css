@@ -1,0 +1,79 @@
+.updateprofile{
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	/* background-color: aquamarine; */
+}
+.updateprofile-main{
+	width: clamp(40rem,70vw,130rem);
+	/* width: 60vw; */
+	min-height: 70vh;
+	/* background-color: bisque; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 20px 20px;
+	border-radius: 10px;
+	box-shadow: var(--main-dark-shadow);
+}
+.updateprofile-main H1{
+	font-family: var(--main-font);
+	font-size: 5rem;
+}
+.updateprofile-main form{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	justify-content: space-between;
+	flex-direction: column;
+}
+.updateprofile-main-form{
+	width: 100%;
+	/* background-color: aquamarine; */
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	gap: 10px;
+	row-gap: 30px;
+	flex-wrap: wrap;
+}
+.updateprofile-main-form-main{
+	width: 30rem;
+	height: 6rem;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-evenly;
+	flex-direction: column;
+	/* background-color: blueviolet; */
+}
+.updateprofile-main-form-main label{
+	font-size: 2rem;
+	font-family: var(--main-font-text);
+}
+.updateprofile-main-form-main input{
+	font-size: 1.7rem;
+	width: 100%;
+	height: 3.5rem;
+	border: 2px solid grey;
+	outline: none;
+	text-indent: 2px;
+	font-family: var(--main-font-text);
+}
+.updateprofile-main form button{
+	background-color: var(--green);
+	font-size: 2rem;
+	font-family: var(--main-font);
+	padding: 10px 40px;
+	border-radius: 2px;
+	border: none;
+	transition: 400ms;
+	cursor: pointer;
+}
+.updateprofile-main form button:hover{
+	box-shadow: var(--main-shadow);
+	background-color: var(--green-hover);
+}

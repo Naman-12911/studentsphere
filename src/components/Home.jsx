@@ -1,60 +1,30 @@
 import '../css/Home.css'
-import right from '../assets/right.svg'
+
 export default function Home() {
+
   return (
-	<div>
-		<div className="home container">
+	<div className='home conatiner'>
 			<div className="home-main">
-				<section className='home-main-news'>
-					<h1>NEWS</h1>
-					<div className="home-main-news-main">
-						<div className="home-main-news-main-main">
-							<div className="home-main-news-main-main-image">
-								<img src="https://images.pexels.com/photos/3951353/pexels-photo-3951353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
-							</div>
-							<div className="home-main-news-main-main-info">
-								<h2>TITLE</h2>
-								<p>areas of text</p>
-							</div>
-							<button>READ MORE <img src={right} alt="" /></button>
-						</div>
-					</div>
-					<button>MORE NEWS</button>
-				</section>
-				<section className='home-main-news'>
-					<h1>EVENTS</h1>
-					<div className="home-main-news-main">
-						<div className="home-main-news-main-main">
-							<div className="home-main-news-main-main-image">
-								<img src="https://images.pexels.com/photos/2263436/pexels-photo-2263436.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
-							</div>
-							<div className="home-main-news-main-main-info">
-								<h2>TITLE</h2>
-								<p>areas of text</p>
-							</div>
-							<button>READ MORE <img src={right} alt="" /></button>
-						</div>
-					</div>
-					<button>MORE EVENTS</button>
-				</section>
-				<section className='home-main-news'>
-					<h1>CAREER</h1>
-					<div className="home-main-news-main">
-						<div className="home-main-news-main-main">
-							<div className="home-main-news-main-main-image">
-								<img src="https://images.pexels.com/photos/4065876/pexels-photo-4065876.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
-							</div>
-							<div className="home-main-news-main-main-info">
-								<h2>TITLE</h2>
-								<p>areas of text</p>
-							</div>
-							<button>READ MORE <img src={right} alt="" /></button>
-						</div>
-					</div>
-					<button>MORE CAREER</button>
-				</section>
+				<h1>STUDENT SPHERE</h1>
+				<p>Where students can form connections with their peers and experience personal growth</p>
 			</div>
-		</div>
+			<div className="home-main">
+				<div className="home-main-main">
+					<h1>ABOUT US</h1>
+					<p>Welcome to Student Sphere's official social media page, your connection to the heart of campus life, news, and events. We're dedicated to keeping you informed, engaged, and connected to our vibrant university community through various social media platforms.</p>
+				</div>
+				<div className="home-main-main">
+					<h1>OUR VISION</h1>
+					<p>At Student Sphere, we envision our social media as a vibrant digital community that connects, engages, and showcases the diverse spirit of our university. We're committed to fostering meaningful connections, meaningful conversations, and celebrating our community's achievements.</p>
+				</div>
+				<div className="home-main-main">
+					<h1>OUR POLICY</h1>
+					<p>At Student Sphere, we value respectful and authentic interactions on our social media platforms. Be kind, protect privacy, and engage constructively. Respect copyright and maintain a positive online community.</p>
+				</div>
+			</div>
+			<div className="home-main">
+				
+			</div>
 	</div>
   )
 }

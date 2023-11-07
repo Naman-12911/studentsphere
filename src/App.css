@@ -15,6 +15,7 @@ body{
   justify-content: flex-start;
   flex-direction: column;
   overflow-x: hidden;
+  padding-top: 8vh;
 }
 .container {
   max-width: 100%;
@@ -32,13 +33,26 @@ body{
   --green-hover:#a5be85;
   --offwhite:#FFF9C9;
   --yellow:#FFC95F;
+  --red:#e3415c;
+  --red-hover:#d62643;
   --main-shadow:rgba(0, 0, 0, 0.1) 0px 4px 12px;
   --main-dark-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .display_none{
   display: none;
 }
-
+.coming-soon{
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.coming-soon h1{
+  text-align: center;
+  font-size: 10rem;
+  font-family: var(--main-font);
+  cursor: default;
+}
 @media (max-width: 1536px) {
   .container {
     max-width: 1280px;
