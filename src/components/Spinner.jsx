@@ -1,10 +1,10 @@
 import { BeatLoader } from 'react-spinners';
 
-export default function Spinner() {
+export default function Spinner({color}) {
   return (
 	<div>
 		<BeatLoader
-		color={"#000000"}
+		color={color}
         loading={true}
         // cssOverride={override}
         size={15}

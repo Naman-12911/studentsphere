@@ -17,6 +17,7 @@
 	padding: 10px 30px;
 }
 .navbar-main img{
+	cursor: pointer;
 	width: 12rem;
 }
 .navbar-main ul{

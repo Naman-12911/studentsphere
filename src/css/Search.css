@@ -54,6 +54,7 @@
 	background-color: grey;
 }
 .search-main-top-search img{
+	cursor: pointer;
 	width: 3rem;
 }
 .search-main-bottom{

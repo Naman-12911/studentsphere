@@ -1,0 +1,32 @@
+.section{
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.section-main{
+	width:30%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	/* background-color: aquamarine; */
+}
+.section-main h1{
+	font-size: 5rem;
+	font-family: var(--main-font);
+}
+.section-main ul li{
+	font-size: 2rem;
+	font-family: var(--main-font-text);
+	margin-left: 20px;
+	margin-top: 10px;
+	list-style:square;
+	transition: 200ms all;
+}
+.section-main ul li:hover{
+	text-decoration: underline;
+}
+.section img{
+	max-width: 50rem;
+}

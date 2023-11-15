@@ -6,7 +6,7 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 import Spinner from './Spinner';
 
-export default function Career() {
+export default function House() {
 	const accessToken=useSelector((state)=>state.user.user)
 	const [open,setOpen]=useState(null);
 	const [career,setCareer]=useState();
@@ -17,7 +17,7 @@ export default function Career() {
 	useEffect(()=>{
 		setMainLoading(true)
 		axios
-			.get("https://studentsphere-b734aba5fe3c.herokuapp.com/carrer/carrer/",{
+			.get("https://studentsphere-b734aba5fe3c.herokuapp.com/house/house/",{
 				headers:{
 					"Authorization":`Bearer ${accessToken}`
 				}
@@ -45,7 +45,7 @@ export default function Career() {
 		console.log("This is from comment fetch"+id)
 		setSubLoading(true)
 		axios
-			.get(`https://studentsphere-b734aba5fe3c.herokuapp.com/carrer/comment/?career_id=${id}`,{
+			.get(`https://studentsphere-b734aba5fe3c.herokuapp.com/house/house-comment/?houses_id=${id}`,{
 				headers:{
 					"Authorization":`Bearer ${accessToken}`
 				}
@@ -65,12 +65,12 @@ export default function Career() {
 	const handleNewComment=(carrers_id)=>{
 		console.log("This is from handle new comment"+career)
 		const data={
-			carrers_id,
+			houses_id:carrers_id,
 			comment
 		}
 		setSubLoading(true)
 		axios
-			.post("https://studentsphere-b734aba5fe3c.herokuapp.com/carrer/comment/",data,{
+			.post("https://studentsphere-b734aba5fe3c.herokuapp.com/house/house-comment/",data,{
 				headers:{
 					"Authorization":`Bearer ${accessToken}`
 				}
@@ -88,7 +88,7 @@ export default function Career() {
 	}
   return (
 	<div className="career conatiner">
-		<h1>CAREER</h1>
+		<h1>HOUSE</h1>
 		{mainLoading?<Spinner color={"#FFFFFF"}/>:<>
 		<div className="career-main">
 			{career && career.map((data,i)=>{
@@ -131,7 +131,6 @@ export default function Career() {
 				)
 			})}
 		</div>
-		
 		</>}
 	</div>
   )

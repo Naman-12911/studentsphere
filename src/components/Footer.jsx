@@ -5,7 +5,7 @@ export default function Footer() {
 	<div>
 		<div className="footer">
 			<div className="footer-main container">
-				<h1>FOOTER</h1>
+				<h1>&copy; Student Sphere All Rights Reserved.</h1>
 			</div>
 		</div>
 	</div>

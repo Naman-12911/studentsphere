@@ -60,7 +60,7 @@ export default function Register() {
 						<button type='submit'>SIGN UP</button>
 					</form>
 					{error
-							?<p style={{color:"red"}}>Check if all the fields are filled / Try again later.</p>
+							?<p style={{color:"red"}}>Check if all the fields are filled/ Try Again with different Email Or Phone Number / Try again later.</p>
 							:""
 					}
 					<p>Already Have an Account?<span onClick={()=>navigate("/login")} style={{backgroundColor:"white",cursor:"pointer",color:"#0096FF"}}>Sign In</span></p>

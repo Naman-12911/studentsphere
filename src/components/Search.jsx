@@ -1,46 +1,59 @@
 import '../css/Search.css'
 import search from '../assets/search.svg'
 import { useNavigate } from 'react-router-dom'
+import { useState } from 'react';
+import axios from 'axios';
+import Spinner from './Spinner'
 export default function Search() {
+
 	const navigate=useNavigate();
+	const [input,setInput]=useState('');
+	const [loading,setLoading]=useState(false);
+	const [error,setError]=useState(false);
+	const [data,setData]=useState();
+	
+	const handleSearch=()=>{
+		setLoading(true)
+		axios
+			.get(`https://studentsphere-b734aba5fe3c.herokuapp.com/house/search/?name=${input}`)
+			.then((response)=>{
+				setData(response.data)
+				console.log(response.data)
+				setLoading(false)
+			})
+			.catch((error)=>{
+				console.log(error.response.data)
+				setError(true)
+				setLoading(false)
+			})
+	}
   return (
 	<div className='search container'>
+		{loading?<Spinner/>:
 		<div className="search-main">
-			<div className="search-main-top">
-				<h1>SEARCH COLLEGE</h1>
-				<div className="search-main-top-search">
-					<input type="text" placeholder='Search College'/>
-					<span></span>
-					<img src={search} alt="" />
-				</div>
-			</div>
-			<div className="search-main-bottom">
-				<div className="search-main-bottom-main" onClick={()=>navigate("/login")}>
-					<div className="search-main-bottom-main-image">
-						<img src="https://www.vassar.edu/admission/assets/images/journey/0256-19-10-ja-library-lawn-vassar-vb-038.jpg" alt="" />
-					</div>
-					<h1>Vassar College</h1>
-				</div>
-				<div className="search-main-bottom-main" onClick={()=>navigate("/login")}>
-					<div className="search-main-bottom-main-image">
-						<img src="https://jkeducation.com/media/2015_10_24_VictorDrone_DJI_0514_-_Joe_Giacalone.jpg" alt="" />
-					</div>
-					<h1>Marist College</h1>
-				</div>
-				<div className="search-main-bottom-main" onClick={()=>navigate("/login")}>
-					<div className="search-main-bottom-main-image">
-						<img src="https://www.thoughtco.com/thmb/HrQZNoTUjL96ejZjFlmMCq_EFbI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/suny-administration-building-in-albany--new-york-186654021-1e49bcdc84a94d4eb49e8d8839016273.jpg" alt="" />
-					</div>
-					<h1>State University of New York at New Paltz</h1>
-				</div>
-				<div className="search-main-bottom-main" onClick={()=>navigate("/login")}>
-					<div className="search-main-bottom-main-image">
-						<img src="https://www.suny.edu/media/suny/content-assets/images/campus-profiles/pics/dutchess-campus-banner.jpg" alt="" />
-					</div>
-					<h1>Dutchess Community College</h1>
-				</div>
+		<div className="search-main-top">
+			<h1>SEARCH COLLEGE</h1>
+			<div className="search-main-top-search">
+				<input type="text" placeholder='Search College' onChange={(e)=>setInput(e.target.value)} value={input}/>
+				<span></span>
+				<img onClick={handleSearch} src={search} alt="" />
 			</div>
 		</div>
+		<div className="search-main-bottom">
+			{data && data.map((data)=>{
+				return(
+					<div key={data.id} className="search-main-bottom-main" onClick={()=>navigate("/login")}>
+						<div className="search-main-bottom-main-image">
+							<img src={data.image_urls} alt="" />
+						</div>
+						<h1>{data.name}</h1>
+					</div>
+				)
+			})}
+		</div>
+	</div>
+		}
+		
 	</div>
   )
 }

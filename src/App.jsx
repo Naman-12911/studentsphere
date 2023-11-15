@@ -15,6 +15,8 @@ import Lenis from '@studio-freight/lenis'
 import Career from './components/Career'
 import News from './components/News'
 import Events from './components/Event'
+import Section from './components/Section'
+import House from './components/House'
 
 function App() {
 
@@ -36,11 +38,13 @@ function App() {
     <Navbar/>
       <Routes>
         <Route path='/' element={<Search/>}/>
-        <Route path='/home' element={<Home/>}/>
-        <Route path='/feed' element={<Feed/>}/>
-        <Route path='/career' element={<Career/>}/>
-        <Route path='/news' element={<News/>}/>
-        <Route path='/event' element={<Events/>}/>
+        <Route path='/home' element={user?<Home/>:<Navigate to={"/login"}/>}/>
+        <Route path='/section' element={user?<Section/>:<Navigate to={"/login"}/>}/>
+        <Route path='/feed' element={user?<Feed/>:<Navigate to={"/login"}/>}/>
+        <Route path='/career' element={user?<Career/>:<Navigate to={"/login"}/>}/>
+        <Route path='/house' element={user?<House/>:<Navigate to={"/login"}/>}/>
+        <Route path='/news' element={user?<News/>:<Navigate to={"/login"}/>}/>
+        <Route path='/event' element={user?<Events/>:<Navigate to={"/login"}/>}/>
         <Route path='/login' element={!user?<Login/>:<Navigate to={"/home"}/>}/>
         <Route path='/register' element={!user?<Register/>:<Navigate to={"/home"}/>}/>
         <Route path='/profile' element={user?<UserProfile/>:<Navigate to={"/login"}/>}/>
