@@ -101,7 +101,7 @@ export default function House() {
 						<p>{data.user.name}</p>
 					</div>
 					<div className="career-main-main-mid">
-						<p>{data.Description}</p>
+					<p dangerouslySetInnerHTML={{__html:data.Description}}></p>
 					</div>
 					<div className="career-main-main-bottom">
 						<button onClick={()=>{toggle(i);handleComment(data.id)}}><img src={commentsvg} alt="" />Comments</button>

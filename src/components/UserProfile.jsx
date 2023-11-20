@@ -340,7 +340,7 @@ export default function UserProfile() {
 						<input type="text" value={newCarrerDescription} onChange={(e)=>setNewCarrerDescription(e.target.value)} style={{width:"100%",outline:"none",border:"none",borderBottom:"1px solid grey",fontSize:"1.9rem"}}/>
 						<button onClick={()=>handleUpdateCareer(data.id,newCarrerDescription)}>Update Post</button>
 						</>
-						:<p>{data.Description}</p>
+						:<p dangerouslySetInnerHTML={{__html:data.Description}}></p>
 						}
 					</div>
 					<div className="career-main-main-bottom">
@@ -384,7 +384,7 @@ export default function UserProfile() {
 						<input type="text" value={newHouseDescription} onChange={(e)=>setNewHouseDescription(e.target.value)} style={{width:"100%",outline:"none",border:"none",borderBottom:"1px solid grey",fontSize:"1.9rem"}}/>
 						<button onClick={()=>handleUpdateHouse(data.id,newHouseDescription)}>Update Post</button>
 						</>
-						:<p>{data.Description}</p>
+						:<p dangerouslySetInnerHTML={{__html:data.Description}}></p>
 						}
 					</div>
 					<div className="career-main-main-bottom">
