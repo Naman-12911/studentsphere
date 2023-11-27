@@ -65,7 +65,7 @@ export default function Login() {
 							<button type='submit'>SIGN IN</button>
 						</form>
 						{error ? <p style={{color:"red"}}>Invalid Credentials / Try Again Later</p>:""}
-						{/* <p onClick={()=>navigate("/login")} style={{backgroundColor:"white",cursor:"pointer",color:"#0096FF"}}>Forgot Password?</p> */}
+						<a href="https://studentsphere-b734aba5fe3c.herokuapp.com/account/password_reset/" target='_blank' rel="noreferrer"><p style={{backgroundColor:"white",cursor:"pointer",color:"#0096FF"}}>Forgot Password?</p></a>
 						<p>Don&#39;t Have an Account?<span onClick={()=>navigate("/register")} style={{backgroundColor:"white",cursor:"pointer",color:"#0096FF"}}>Sign Up</span></p>
 					</div>
 					<span className='between-bar'></span>
