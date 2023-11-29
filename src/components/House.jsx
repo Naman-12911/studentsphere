@@ -101,7 +101,58 @@ export default function House() {
 						<p>{data.user.name}</p>
 					</div>
 					<div className="career-main-main-mid">
-					<p dangerouslySetInnerHTML={{__html:data.Description}}></p>
+					<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>NAME:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.contact_name}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>WHATSAPP NUMBER:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.whatsApp_number}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>EMAIL:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.email}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>ADDRESS:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.address}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>DESCRIPTION:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.Description}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>RENT:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.rent_cost}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>BEDROOM:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.bedroom}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>BATHROOM:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.bathroom}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>WALKING DISTANCE:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.distance_walk}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>MAX OCCUPANCY:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.maximum_occupancy}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>SPECIAL NOTES:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.special_notes}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>AVAILABLE DATE:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.available_date}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>PROPERTY URL:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.property_url}}></p>
+						</div>
 					</div>
 					<div className="career-main-main-bottom">
 						<button onClick={()=>{toggle(i);handleComment(data.id)}}><img src={commentsvg} alt="" />Comments</button>

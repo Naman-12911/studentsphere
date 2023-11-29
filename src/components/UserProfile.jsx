@@ -92,6 +92,7 @@ export default function UserProfile() {
 				}
 			})
 			.then((response)=>{
+				console.log(response.data);
 				setHousing(response.data)
 			})
 			.catch((error)=>{
@@ -309,7 +310,7 @@ export default function UserProfile() {
 					<div className="userprofile-main-bottom-left">
 						<div className="userprofile-main-bottom-left-newpost">
 							<button onClick={()=>setOpenPostCareer(!openPostCareer)}><img src={plus} alt="" />NEW CAREER POST</button>
-							<button onClick={()=>setOpenPostHouse(!openPostHouse)}><img src={plus} alt="" />NEW HOUSE POST</button>
+							<button onClick={()=>navigate('/newhouse')}><img src={plus} alt="" />NEW HOUSE POST</button>
 						</div>
 						<div className="new-career" style={{display:openPostCareer?"flex":"none"}}>
 							<h1>NEW CAREER POST:</h1>
@@ -384,12 +385,65 @@ export default function UserProfile() {
 						<input type="text" value={newHouseDescription} onChange={(e)=>setNewHouseDescription(e.target.value)} style={{width:"100%",outline:"none",border:"none",borderBottom:"1px solid grey",fontSize:"1.9rem"}}/>
 						<button onClick={()=>handleUpdateHouse(data.id,newHouseDescription)}>Update Post</button>
 						</>
-						:<p dangerouslySetInnerHTML={{__html:data.Description}}></p>
+						:<>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>NAME:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.contact_name}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>WHATSAPP NUMBER:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.whatsApp_number}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>EMAIL:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.email}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>ADDRESS:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.address}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>DESCRIPTION:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.Description}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>RENT:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.rent_cost}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>BEDROOM:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.bedroom}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>BATHROOM:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.bathroom}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>WALKING DISTANCE:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.distance_walk}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>MAX OCCUPANCY:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.maximum_occupancy}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>SPECIAL NOTES:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.special_notes}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>AVAILABLE DATE:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.available_date}}></p>
+						</div>
+						<div style={{display:'flex',alignItems:'flex-start',justifyContent:'center',gap:'5px'}}>
+							<p><b>PROPERTY URL:</b></p>
+							<p dangerouslySetInnerHTML={{__html:data.property_url}}></p>
+						</div>
+						</>
 						}
 					</div>
 					<div className="career-main-main-bottom">
 						<button onClick={()=>{toggleHouse(i);handleHouseComment(data.id)}}><img src={commentsvg} alt="" />Comments</button>
-						<button onClick={()=>{toggleEditHouse(i),setNewHouseDescription(data.Description)}}><img src={editsvg} alt="" />Edit</button>
+						<button onClick={()=>navigate('/edithouse',{ state: data })}><img src={editsvg} alt="" />Edit</button>
 						<button onClick={()=>handleHouseDelete(data.id)}><img src={deletesvg} alt="" />Delete</button>
 					</div>
 					<div className="career-main-main-comments" style={{height:openHouse==i?"20vh":"0vh"}}>

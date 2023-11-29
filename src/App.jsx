@@ -17,6 +17,8 @@ import News from './components/News'
 import Events from './components/Event'
 import Section from './components/Section'
 import House from './components/House'
+import NewHouse from './components/NewHouse'
+import EditHouse from './components/EditHouse'
 
 function App() {
 
@@ -48,6 +50,8 @@ function App() {
         <Route path='/login' element={!user?<Login/>:<Navigate to={"/home"}/>}/>
         <Route path='/register' element={!user?<Register/>:<Navigate to={"/home"}/>}/>
         <Route path='/profile' element={user?<UserProfile/>:<Navigate to={"/login"}/>}/>
+        <Route path='/newhouse' element={user?<NewHouse/>:<Navigate to={"/login"}/>}/>
+        <Route path='/edithouse' element={user?<EditHouse/>:<Navigate to={"/login"}/>}/>
         <Route path='/updateprofile' element={<UpdateProfile/>}/>
       </Routes>
     <Footer/>  
