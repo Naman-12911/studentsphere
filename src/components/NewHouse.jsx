@@ -63,7 +63,11 @@ export default function NewHouse() {
 			available_date,
 			contact_name,
 			whatsApp_number,
-			email
+			email,
+			address,
+			description,
+			rent_cost,
+			property_url
 		}
 		axios
 			.post("https://studentsphere-b734aba5fe3c.herokuapp.com/house/house/",data,{

@@ -10,7 +10,7 @@ export default function EditHouse() {
 	const user=useSelector((state)=>state.user.user)
 	const navigate=useNavigate();
 
-	const [id,setId]=useState(state.id)
+	const id=state.id;
 	const [bedroom,setbedroom]=useState(state.bedroom);
 	const [bathroom,setBathroom]=useState(state.bathroom);
 	const [distance_walk,setDistanceWalk]=useState(state.distance_walk);
@@ -66,7 +66,11 @@ export default function EditHouse() {
 			available_date,
 			contact_name,
 			whatsApp_number,
-			email
+			email,
+			address,
+			description,
+			rent_cost,
+			property_url
 		}
 		axios
 			.patch(`https://studentsphere-b734aba5fe3c.herokuapp.com/house/house/${id}/`,data,{
